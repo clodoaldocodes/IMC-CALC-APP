@@ -10,6 +10,10 @@ const [messageImc, setMessageImc] = useState("Preencha o pesso e altura!")
 const [imc, setImc] = useState(null)
 const [textButton, setTextButton] = useState("Calcular")
 
+function imcCalculator(){
+    return setImc((weight/(height*height)).toFixed(2))
+}
+
     return(
         <View>
             <View>
