@@ -21,7 +21,11 @@ function validationImc(){
         setWeight(null)
         setMessageImc("Seu imc é igual:")
         setTextButton("Calcular novamente")
+        return
     }
+    setImc(null)
+    setTextButton("Calcular")
+    setMessageImc("Preenchar o peso e altura")
 }
 
     return(
@@ -29,15 +33,22 @@ function validationImc(){
             <View>
                 <Text>Altura</Text>
                 <TextInput 
+                onChangeText={setHeight}
+                value={height}
                 placeholder="Ex. 1.75 m"
                 keyboardType="numeric"/>
 
                 <Text>Peso</Text>
                 <TextInput
+                onChangeText={setWeight}
+                value={weight}
                 placeholder="Ex. 75.36 kg"
                 keyboardType="numeric"/>
 
-                <Button title="Calcular IMC"/>
+                <Button 
+                onPress={() => validationImc()}
+                title={textButton}/>
+
             </View>
             <ResultImc messageResultImc={messageImc} resultImc={imc}/>
         </View>
