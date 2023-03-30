@@ -1,3 +1,5 @@
+# Cross-Platform BMI Calculator App Developed with React Native
+
 The app I developed using React Native is a powerful BMI calculator that allows users to track their health and fitness progress. To clone the repository and access the app's code, follow these steps:
 
 * Go to the Github repository page and click on the "Clone or download" button.
