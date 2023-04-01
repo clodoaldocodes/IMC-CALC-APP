@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {TextInput, View, Text, TouchableOpacity} from "react-native"
+import {TextInput, View, Text, TouchableOpacity, Vibration} from "react-native"
 import ResultImc from "../ResultImc";
 import styles from "./style";
 
@@ -18,6 +18,7 @@ function imcCalculator(){
 
 function verificationImc(){
     if(imc == null){
+        Vibration.vibrate()
         setErrorMenssage('Campo obrigatório*')
     }
 }
@@ -50,6 +51,7 @@ function validationImc(){
                 keyboardType="numeric"/>
 
                 <Text style={styles.formLabel}>Peso</Text>
+                <Text style={styles.errorMenssage}>{errorMenssage}</Text>
                 <TextInput style={styles.input}
                 onChangeText={setWeight}
                 value={weight}
