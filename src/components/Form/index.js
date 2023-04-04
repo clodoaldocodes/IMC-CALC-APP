@@ -13,11 +13,10 @@ const [textButton, setTextButton] = useState("Calcular")
 const [errorMenssage, setErrorMenssage] = useState(null)
 const [imcList, setImcList] = useState([])
 
-function imcCalculator(){
-    let heightFormat = height.replace(',','.')
-    let totalImc = (weight/(heightFormat*heightFormat)).toFixed(2)
-    setImcList((arr) => [...arr, {id: new Date().getTime(), imc: totalImc}])
-    setImc(totalImc)
+function imcCalculator() {
+let totalImc = (weight / (heightFormat * heightFormat)).toFixed(2);
+setImcList((arr) => [...arr, { id: new Date().getTime(), imc: totalImc }]);
+setImc(totalImc);
 }
 
 function verificationImc(){
@@ -28,6 +27,7 @@ function verificationImc(){
 }
 
 function validationImc(){
+    console.log
     if(weight != null && height != null){
         imcCalculator()
         setHeight(null)
@@ -70,6 +70,7 @@ function validationImc(){
 
             </View>
             <ResultImc messageResultImc={messageImc} resultImc={imc}/>
+
         </Pressable>
     );
 }
